@@ -23,7 +23,11 @@
 
 <style>
 	row {
-		display: flex;
-		gap: 0.25rem;
+		display: grid;
+		grid-gap: 0.25rem;
+		grid-template-columns: repeat(5, 50px);
+		padding-bottom: 0.25rem;
+		margin-bottom: 1rem;
+		border-bottom: solid 0.2rem var(--text-color);
 	}
 </style>

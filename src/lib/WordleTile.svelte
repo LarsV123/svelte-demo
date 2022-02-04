@@ -1,6 +1,6 @@
 <script>
-	export let char = '';
-	export let status = 'absent';
+	export let char = "";
+	export let status = "absent";
 </script>
 
 <tile class={status}>

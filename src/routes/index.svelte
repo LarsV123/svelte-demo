@@ -53,44 +53,50 @@
 </script>
 
 <h1>WORDLE FOR CHEATERS</h1>
-<button on:click={getWord}>Get a new word!</button>
 
+<button on:click={getWord}>Get a new word!</button>
 <Board {guesses} {word} />
 
-<p>Choose a difficulty level:</p>
-{#each difficultyLevels as option}
-	<label>
-		<input type="radio" bind:group={difficulty} name="difficulty" value={option.level} />
-		{option.name}
-	</label>
-{/each}
+<section>
+	<p>Choose a difficulty level:</p>
+	{#each difficultyLevels as option}
+		<label>
+			<input type="radio" bind:group={difficulty} name="difficulty" value={option.level} />
+			{option.name}
+		</label>
+	{/each}
 
-{#if word}
-	{#if difficulty == 0}
-		<p>People who don't cheat are really cool. Good luck!</p>
-	{:else if difficulty == 1}
-		<p>
-			The definition of your word is "{definition}". That should make this easy.
-		</p>
-	{:else}
-		<p>
-			The word you're looking for is "{word}", which means "{definition}". You really should have
-			been able to guess that without cheating...
-		</p>
+	{#if word}
+		{#if difficulty == 0}
+			<p>People who don't cheat are really cool. Good luck!</p>
+		{:else if difficulty == 1}
+			<p>
+				The definition of your word is "{definition}". That should make this easy.
+			</p>
+		{:else}
+			<p>
+				The word you're looking for is "{word}", which means "{definition}". You really should have
+				been able to guess that without cheating...
+			</p>
+		{/if}
 	{/if}
-{/if}
 
-{#if easteregg}
-	<p>You are not in the sudoers file. This incident will be reported.</p>
-{/if}
+	{#if easteregg}
+		<p>You are not in the sudoers file. This incident will be reported.</p>
+	{/if}
 
-{#if hasWon}
-	<p>Correct! The word was "{word}", meaning "{definition}".</p>
-{/if}
-<input class="textbox" on:keypress={onKeyPress} bind:value={guess} />
-<button on:click={clickGuess}><span class="flipped">🚀</span> Submit answer 🚀</button>
+	{#if hasWon}
+		<p>Correct! The word was "{word}", meaning "{definition}".</p>
+	{/if}
+	<input class="textbox" on:keypress={onKeyPress} bind:value={guess} />
+	<button on:click={clickGuess}><span class="flipped">🚀</span> Submit answer 🚀</button>
+</section>
 
 <style>
+	section {
+		display: flex;
+		flex-direction: column;
+	}
 	button {
 		max-width: 15rem;
 		padding: 0.5rem;
@@ -105,7 +111,7 @@
 	}
 
 	.textbox {
-		width: 50%;
+		width: 100%;
 		margin: auto;
 	}
 
