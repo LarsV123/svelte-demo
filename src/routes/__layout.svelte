@@ -1,16 +1,17 @@
 <script lang="ts">
-	import Header from '$lib/header/Header.svelte';
-	import '../app.css';
+	import "../app.css";
 </script>
-
-<Header />
 
 <main>
 	<slot />
 </main>
 
 <footer>
-	<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+	<p>
+		Styles and gameplay poorly copied from <a href="https://www.powerlanguage.co.uk/wordle/"
+			>Wordle</a
+		>
+	</p>
 </footer>
 
 <style>
