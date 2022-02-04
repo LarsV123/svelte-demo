@@ -23,7 +23,7 @@
 			guesses = [];
 		}
 
-		if (guess.startsWith("sudo")) {
+		if (guess.toLowerCase().startsWith("sudo")) {
 			easteregg = true;
 		} else {
 			easteregg = false;
